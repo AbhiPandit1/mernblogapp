@@ -1,28 +1,44 @@
 import React, { useState } from 'react';
+import {Navigate} from 'react-router-dom';
 
 const LoginPage = () => {
-  const [username, setuserName] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const[redirect,setRedirect]=useState(false)
 
   const login = async (e) => {
     e.preventDefault();
-    await fetch('http://localhost:4300/login', {
-      method: 'POST',
-      body: JSON.stringify({ username, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-  };
+    
+    const response=await fetch('http://localhost:4300/login', {
+        method: 'POST',
+        body: JSON.stringify({ username, password }),
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        
+      });
+      if (response.ok){
+        setRedirect(true)
 
+      }
+      else{
+        alert('wrong Credentials')
+      }
+    }
+
+    if(redirect){
+      return <Navigate to={'/'}/>
+
+    }
   return (
-    <div className="form-main" onSubmit={login}>
-    <form  >
-      <h1>LOGIN</h1>
-      <form className="login">
+
+    <div className="form-main">
+      <form onSubmit={login}>
+        <h1>LOGIN</h1>
         <input
           type="text"
           placeholder="username"
           value={username}
-          onChange={(e) => setuserName(e.target.value)}
+          onChange={(e) => setUsername(e.target.value)}
         />
         <input
           type="password"
@@ -30,10 +46,8 @@ const LoginPage = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-
-        <button>Login</button>
+        <button type="submit">Login</button>
       </form>
-    </form>
     </div>
   );
 };
