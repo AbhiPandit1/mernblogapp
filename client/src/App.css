@@ -1,0 +1,132 @@
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+p {
+  font-family: sans-serif;
+  line-height: 1rem;
+  overflow: scroll;
+}
+
+body {
+  color: #222;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+main {
+  padding: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  align-items: center;
+}
+
+header > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+header > nav {
+  text-decoration: none;
+  display: flex;
+  gap: 15px;
+}
+
+div > img {
+  margin: 1rem;
+  height: 90%;
+}
+
+.post {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  max-width: 100%;
+  max-height: 100%;
+
+  gap: 3rem;
+  margin: auto;
+  margin-top: 2rem;
+  border: 0.2px solid #e5e5e5;
+}
+
+.text > h2 {
+  font-size: 1.5rem;
+}
+div.post p.info {
+  margin: 6px 0;
+  color: #888;
+  font-size: 0.7rem;
+  font-weight: bold;
+  display: flex;
+  gap: 10px;
+}
+div.post p.info a.author {
+  color: #333;
+}
+
+div.post p.summary {
+  margin: 10px 0;
+  line-height: 1.4rem;
+}
+
+
+
+
+
+
+
+
+.form-main{
+  
+  max-width: 120%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 70vw;
+ border: 2px solid #eee;
+ 
+
+}
+
+
+.login,
+ .register {
+  
+  max-width: 800px;
+  margin: auto;
+}
+
+input {
+  display: block;
+  margin-bottom: 2rem;
+  padding: 0.8rem;
+  border: 0;
+  width: 35vw;
+  background-color: #eee;
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px;
+}
+button{
+  width: 35vw;
+  display: block;
+  padding: 0.6rem;
+  color: white;
+  background-color: black;
+}
